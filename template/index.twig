@@ -1,0 +1,26 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<div class="subheader">
+    <div>
+        <a href = "{{ full_url_for('upload') }}">Upload File</a><i class="fa fa-chevron-right"></i>
+      
+
+    </div>
+    <!--<img src="https://i.ibb.co/PxGygfW/delivery.png" alt="" />-->
+</div>
+
+<div class="grid container">
+    <h1 class = "title-files">
+        Последние загруженные файлы
+    </h1>
+    {% for file in files %}
+    <div class="item">
+        <h4>{{ file.fileName|e }}</h4>
+        <p class="desc">{{ file.fileSize|e }}</p>
+        <img src="https://i.ibb.co/BKgzCc5/medicine.png" alt="" />
+    </div>
+    {% endfor %}
+    
+</div>
+{% endblock %}
